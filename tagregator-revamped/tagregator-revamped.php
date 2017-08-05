@@ -32,7 +32,7 @@ define( 'TAGREGATOR_REVAMPED_TWITTER_API', 'https://api.twitter.com' );
 
 define( 'TAGREGATOR_REVAMPED_INSTAGRAM_DEV_PORTAL', 'https://www.instagram.com/developer/' );
 define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API', 'https://api.instagram.com' );
-define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API_TOKEN', 'https://api.instagram.com/oauth/access_token');
+define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API_TOKEN', 'https://api.instagram.com/oauth/access_token' );
 
 define( 'TAGREGATOR_REVAMPED_FLICKR_DEV_PORTAL', 'https://www.flickr.com/services/' );
 define( 'TAGREGATOR_REVAMPED_FLICKR_API', 'https://secure.flickr.com/services/rest' );
