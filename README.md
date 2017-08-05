@@ -1,8 +1,6 @@
 #### Tagregator Revamped
 Contributors: xkon
 
-Donate link: https://www.paypal.me/xkon
-
 Tags: hashtag, social media, twitter, instagram, flickr, google+, google plus
 
 Requires at least: 4.7
