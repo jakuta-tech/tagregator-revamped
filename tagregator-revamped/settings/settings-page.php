@@ -110,11 +110,14 @@ function tagregator_revamped_settings_page()
 	<?php
 
 	$tr_insta_options = get_option( 'tagregator_revamped_options', array() );
+	$access_token = '';
 
-	$insta_client_id = $tr_insta_options['tagregator_revamped_instagram_client_id'];
-	$insta_client_secret = $tr_insta_options['tagregator_revamped_instagram_client_secret'];
-	$insta_redirect_url = $tr_insta_options['tagregator_revamped_instagram_redirect_url'];
-	$insta_access_token = $tr_insta_options['tagregator_revamped_instagram_access_token'];
+	if ( ! empty( $tr_insta_options ) ) {
+		$insta_client_id = $tr_insta_options['tagregator_revamped_instagram_client_id'];
+		$insta_client_secret = $tr_insta_options['tagregator_revamped_instagram_client_secret'];
+		$insta_redirect_url = $tr_insta_options['tagregator_revamped_instagram_redirect_url'];
+		$insta_access_token = $tr_insta_options['tagregator_revamped_instagram_access_token'];
+	}
 
 	if ( ! empty( $_GET['code'] ) ) {
 		$instagram_code = sanitize_text_field( $_GET['code'] );
@@ -124,7 +127,7 @@ function tagregator_revamped_settings_page()
 
 	if ( $instagram_code !== '' && $insta_access_token === '' ) {
 		$response = wp_remote_post(
-			TAGREGATOR_REVAMPED_INSTAGRAM_API,
+			TAGREGATOR_REVAMPED_INSTAGRAM_API_TOKEN,
 			array(
 				'method' => 'POST',
 				'timeout' => 45,
@@ -146,7 +149,7 @@ function tagregator_revamped_settings_page()
 			$access_token = $decode_response['access_token'];
 		}
 
-		if ( $access_token !== '' ) {
+		if ( $access_token != '' ) {
 			?>
 			<script>
 				(function ( $ ) {
@@ -163,7 +166,9 @@ function tagregator_revamped_settings_page()
 		(function ( $ ) {
 			$( document ).ready( function () {
 				$( '#tagregator_revamped_instagram_redirect_url' ).val( window.location.href );
+				<?php if ( $insta_client_id != '' ) { ?>
 				$( '#get_access_token' ).attr('href', 'https://www.instagram.com/oauth/authorize/?client_id=<?php echo $insta_client_id; ?>&redirect_uri=<?php echo $insta_redirect_url; ?>&response_type=code');
+				<?php } ?>
 			} );
 		})( jQuery );
 	</script>
