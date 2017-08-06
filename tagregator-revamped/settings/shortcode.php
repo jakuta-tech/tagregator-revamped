@@ -10,12 +10,21 @@ function tagregator_revamped_shortcode( $the_hashtags ) {
 
 	// create terms if they don't exist
 	foreach ( $hashtags as $hashtag ) {
-		$cleantag = str_replace( '#', '', $hashtag );
+		$remove_hashtag_spaces = str_replace( ' ', '', $hashtag );
+		$cleantag = str_replace( '#', '', $remove_hashtag_spaces );
 		$term = term_exists( $cleantag, 'tagrev-hashtags' );
 		if ( 0 == $term && null == $term ) {
-			echo $cleantag . ' category doesn\'t exist!<br/>';
+			wp_insert_term(
+				$cleantag,
+				'tagrev-hashtags',
+				array(
+					'description' => '#' . $cleantag,
+					'slug'        => $cleantag,
+				)
+			);
 		}
 	}// end foreach ( $hashtags as $hashtag )
+	// end create terms if they don't exist
 
 }// end tagregator_revamped_shortcode
 
