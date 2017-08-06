@@ -9,7 +9,7 @@ function tagregator_revamped_get_api_hashtags() {
 		'hide_empty' => false,
 	) );
 	foreach ( $terms as $term ) {
-		error_log( $term->slug );
+		error_log( $term->name );
 	}
 
 }// end tagregator_revamped_get_api_hashtags
