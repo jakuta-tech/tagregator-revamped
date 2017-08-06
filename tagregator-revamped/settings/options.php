@@ -104,7 +104,7 @@ function tagregator_revamped_options() {
 		'tagregator_revamped_flickr',
 		'tagregator_revamped_flickr'
 	);
-} // end tagregator_revamped_options
+}// end tagregator_revamped_options
 
 add_action( 'admin_init', 'tagregator_revamped_options' );
 
@@ -114,44 +114,44 @@ add_action( 'admin_init', 'tagregator_revamped_options' );
 
 function tagregator_revamped_section_text() {
 	echo 'Tagregator Revamped Settings';
-} // end tagregator_revamped_section_text
+}// end tagregator_revamped_section_text
 
 function tagregator_revamped_twitter_key() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_twitter_key' name='tagregator_revamped_options[tagregator_revamped_twitter_key]' size='40' type='text' value='{$tr_options['tagregator_revamped_twitter_key']}' />";
-} // end tagregator_revamped_twitter_key
+}// end tagregator_revamped_twitter_key
 
 function tagregator_revamped_twitter_secret() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_twitter_secret' name='tagregator_revamped_options[tagregator_revamped_twitter_secret]' size='40' type='text' value='{$tr_options['tagregator_revamped_twitter_secret']}' />";
-} // end tagregator_revamped_twitter_secret
+}// end tagregator_revamped_twitter_secret
 
 function tagregator_revamped_instagram_client_id() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_instagram_client_id' name='tagregator_revamped_options[tagregator_revamped_instagram_client_id]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_client_id']}' />";
-} // end tagregator_revamped_instagram_client_id
+}// end tagregator_revamped_instagram_client_id
 
 function tagregator_revamped_instagram_client_secret() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_instagram_client_secret' name='tagregator_revamped_options[tagregator_revamped_instagram_client_secret]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_client_secret']}' />";
-} // end tagregator_revamped_instagram_client_secret
+}// end tagregator_revamped_instagram_client_secret
 
 function tagregator_revamped_instagram_redirect_url() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_instagram_redirect_url' name='tagregator_revamped_options[tagregator_revamped_instagram_redirect_url]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_redirect_url']}' />";
-} // end tagregator_revamped_instagram_redirect_url
+}// end tagregator_revamped_instagram_redirect_url
 
 function tagregator_revamped_instagram_access_token() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_instagram_access_token' name='tagregator_revamped_options[tagregator_revamped_instagram_access_token]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_access_token']}' />";
-} // end tagregator_revamped_instagram_access_token
+}// end tagregator_revamped_instagram_access_token
 
 function tagregator_revamped_instagram_sandbox() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	if ( empty( $tr_options['tagregator_revamped_instagram_sandbox'] ) ) {
 		$yes_selected = 'selected="selected"';
 		$no_selected = '';
-	} elseif ( $tr_options['tagregator_revamped_instagram_sandbox'] == 'yes' ) {
+	} elseif ( 'yes' == $tr_options['tagregator_revamped_instagram_sandbox'] ) {
 		$yes_selected = 'selected="selected"';
 		$no_selected = '';
 	} else {
@@ -162,14 +162,14 @@ function tagregator_revamped_instagram_sandbox() {
 	echo '<option value="yes" ' . $yes_selected . '>Yes</option>';
 	echo '<option value="no" ' . $no_selected . '>No</option>';
 	echo '</select>';
-} // end tagregator_revamped_instagram_redirect_url
+}// end tagregator_revamped_instagram_redirect_url
 
 function tagregator_revamped_flickr_key() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_flickr_key' name='tagregator_revamped_options[tagregator_revamped_flickr_key]' size='40' type='text' value='{$tr_options['tagregator_revamped_flickr_key']}' />";
-} // end tagregator_revamped_flickr_key
+}// end tagregator_revamped_flickr_key
 
 function tagregator_revamped_googleplus_key() {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_googleplus_key' name='tagregator_revamped_options[tagregator_revamped_googleplus_key]' size='40' type='text' value='{$tr_options['tagregator_revamped_googleplus_key']}' />";
-} // end tagregator_revamped_googleplus_key
+}// end tagregator_revamped_googleplus_key

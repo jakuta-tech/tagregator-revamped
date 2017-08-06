@@ -14,6 +14,6 @@ function tagregator_revamped_create_user() {
 			)
 		);
 	}
-} // end tagregator_revamped_create_user
+}// end tagregator_revamped_create_user
 
 add_action( 'init', 'tagregator_revamped_create_user' );

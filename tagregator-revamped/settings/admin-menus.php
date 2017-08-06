@@ -29,6 +29,6 @@ function tagregator_revamped_admin_menu() {
 		'tagregator_revamped_settings_page'
 	);
 	remove_submenu_page( 'tagregator-revamped', 'tagregator-revamped' );
-} // end tagregator_revamped_admin_menu
+}// end tagregator_revamped_admin_menu
 
 add_action( 'admin_menu', 'tagregator_revamped_admin_menu' );

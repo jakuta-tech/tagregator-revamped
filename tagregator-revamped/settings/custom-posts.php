@@ -21,7 +21,7 @@ function tagregator_revamped_create_taxonomy() {
 	);
 	register_taxonomy( 'tagrev-hashtags', array( 'tagrev-tweets' ), $args );
 
-}
+}// end tagregator_revamped_create_taxonomy
 
 add_action( 'init', 'tagregator_revamped_create_taxonomy', 0 );
 
@@ -49,7 +49,7 @@ function tagregator_revamped_twitter_post_type() {
 		'capability_type' => 'post',
 	);
 	register_post_type( 'tagrev-twitter', $args );
-}
+}// end tagregator_revamped_twitter_post_type
 
 add_action( 'init', 'tagregator_revamped_twitter_post_type', 0 );
 
@@ -72,7 +72,7 @@ function tagregator_revamped_instagram_post_type() {
 		'capability_type' => 'post',
 	);
 	register_post_type( 'tagrev-instagram', $args );
-}
+}// end tagregator_revamped_instagram_post_type
 
 add_action( 'init', 'tagregator_revamped_instagram_post_type', 0 );
 
@@ -95,7 +95,7 @@ function tagregator_revamped_googleplus_post_type() {
 		'capability_type' => 'post',
 	);
 	register_post_type( 'tagrev-googleplus', $args );
-}
+}// end tagregator_revamped_googleplus_post_type
 
 add_action( 'init', 'tagregator_revamped_googleplus_post_type', 0 );
 
@@ -118,6 +118,6 @@ function tagregator_revamped_flickr_post_type() {
 		'capability_type' => 'post',
 	);
 	register_post_type( 'tagrev-flickr', $args );
-}
+}// end tagregator_revamped_flickr_post_type
 
 add_action( 'init', 'tagregator_revamped_flickr_post_type', 0 );
