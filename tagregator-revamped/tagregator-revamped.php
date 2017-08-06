@@ -28,17 +28,17 @@ if ( ! defined( 'WPINC' ) ) {
 //////////////////////////////////////////////////////
 
 define( 'TAGREGATOR_REVAMPED_TWITTER_DEV_PORTAL', 'https://apps.twitter.com/' );
-define( 'TAGREGATOR_REVAMPED_TWITTER_API', 'https://api.twitter.com' );
+define( 'TAGREGATOR_REVAMPED_TWITTER_API', 'https://api.twitter.com/' );
 
 define( 'TAGREGATOR_REVAMPED_INSTAGRAM_DEV_PORTAL', 'https://www.instagram.com/developer/' );
-define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API', 'https://api.instagram.com' );
-define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API_TOKEN', 'https://api.instagram.com/oauth/access_token' );
+define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API', 'https://api.instagram.com/' );
+define( 'TAGREGATOR_REVAMPED_INSTAGRAM_API_TOKEN', 'https://api.instagram.com/oauth/access_token/' );
 
 define( 'TAGREGATOR_REVAMPED_FLICKR_DEV_PORTAL', 'https://www.flickr.com/services/' );
-define( 'TAGREGATOR_REVAMPED_FLICKR_API', 'https://secure.flickr.com/services/rest' );
+define( 'TAGREGATOR_REVAMPED_FLICKR_API', 'https://secure.flickr.com/services/rest/' );
 
 define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_DEV_PORTAL', 'https://console.developers.google.com/' );
-define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_API', 'https://www.googleapis.com/plus' );
+define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_API', 'https://www.googleapis.com/plus/' );
 
 //////////////////////////////////////////////////////
 // Create cron job
@@ -46,9 +46,9 @@ define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_API', 'https://www.googleapis.com/plus' 
 
 // Custom Cron Recurrences
 function tagregator_revamped_do_api_calls( $schedules ) {
-	$schedules['tagrev5'] = array(
-		'display' => 'every 5 minutes',
-		'interval' => 300,
+	$schedules['tagrev30'] = array(
+		'display' => 'every 30 minutes',
+		'interval' => 1800,
 	);
 	return $schedules;
 }
@@ -58,7 +58,7 @@ add_filter( 'cron_schedules', 'tagregator_revamped_do_api_calls' );
 /////////////////////////////// register cron every 5 minutes
 function tagregator_revamped_activation() {
 	if ( ! wp_next_scheduled( 'tagregator_revamped_do_api_calls' ) ) {
-		wp_schedule_event( time(), 'tagrev5', 'tagregator_revamped_do_api_calls' );
+		wp_schedule_event( time(), 'tagrev30', 'tagregator_revamped_do_api_calls' );
 	}
 }// end tagregator_revamped_activation
 
@@ -77,9 +77,11 @@ register_deactivation_hook( __FILE__, 'tagregator_revamped_deactivation' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'settings/create-user.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/custom-posts.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'settings/meta-boxes.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/options.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/admin-menus.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/settings-page.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/shortcode.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/cron.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'functions/instagram-posts.php' );
 

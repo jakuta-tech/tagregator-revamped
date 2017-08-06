@@ -9,7 +9,8 @@ function tagregator_revamped_get_api_hashtags() {
 		'hide_empty' => false,
 	) );
 	foreach ( $terms as $term ) {
-		error_log( $term->name );
+		$the_term = $term->name;
+		tagregator_revamped_get_instagram_posts( $the_term );
 	}
 
 }// end tagregator_revamped_get_api_hashtags

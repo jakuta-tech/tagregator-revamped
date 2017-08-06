@@ -55,7 +55,7 @@ function tagregator_revamped_settings_page()
 													Token!</a> - After the Access Token is in the field please click
 												<strong>'Save'</strong>.</p>
 											<p></p>
-											<p><strong>Note:</strong> Sandbox mode will retrieve your account's 10 latest
+											<p><strong>Note:</strong> Sandbox mode will retrieve your account's
 												posts ignoring the #hashtag. Non-sandbox will retrieve the latest
 												hashtags posts from all instagram as long as there is permission for
 												'public_content' in your client.</p>

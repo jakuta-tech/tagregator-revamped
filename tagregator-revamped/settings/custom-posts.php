@@ -41,7 +41,7 @@ function tagregator_revamped_twitter_post_type() {
 	$args = array(
 		'label' => 'Twitter',
 		'labels' => $labels,
-		'supports' => array( 'title', 'editor', 'custom-fields', ),
+		'supports' => array( 'title', 'editor' ),
 		'taxonomies' => array( 'tagrev-hashtags' ),
 		'hierarchical' => false,
 		'public' => true,
@@ -64,7 +64,7 @@ function tagregator_revamped_instagram_post_type() {
 	$args = array(
 		'label' => 'Instagram',
 		'labels' => $labels,
-		'supports' => array( 'title', 'editor', 'custom-fields', ),
+		'supports' => array( 'title', 'editor' ),
 		'taxonomies' => array( 'tagrev-hashtags' ),
 		'hierarchical' => false,
 		'public' => true,
@@ -87,7 +87,7 @@ function tagregator_revamped_googleplus_post_type() {
 	$args = array(
 		'label' => 'GooglePlus',
 		'labels' => $labels,
-		'supports' => array( 'title', 'editor', 'custom-fields', ),
+		'supports' => array( 'title', 'editor' ),
 		'taxonomies' => array( 'tagrev-hashtags' ),
 		'hierarchical' => false,
 		'public' => true,
@@ -110,7 +110,7 @@ function tagregator_revamped_flickr_post_type() {
 	$args = array(
 		'label' => 'Flickr',
 		'labels' => $labels,
-		'supports' => array( 'title', 'editor', 'custom-fields', ),
+		'supports' => array( 'title', 'editor' ),
 		'taxonomies' => array( 'tagrev-hashtags' ),
 		'hierarchical' => false,
 		'public' => true,
