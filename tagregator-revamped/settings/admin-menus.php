@@ -3,8 +3,7 @@
 // Admin Menu
 //////////////////////////////////////////////////////
 
-function tagregator_revamped_admin_menu()
-{
+function tagregator_revamped_admin_menu() {
 	add_menu_page(
 		'Tagregator Revamped',
 		'Tagregator Revamped',
@@ -32,4 +31,4 @@ function tagregator_revamped_admin_menu()
 	remove_submenu_page( 'tagregator-revamped', 'tagregator-revamped' );
 } // end tagregator_revamped_admin_menu
 
-add_action('admin_menu', 'tagregator_revamped_admin_menu');
+add_action( 'admin_menu', 'tagregator_revamped_admin_menu' );

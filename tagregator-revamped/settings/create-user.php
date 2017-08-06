@@ -3,8 +3,7 @@
 // Create User
 //////////////////////////////////////////////////////
 
-function tagregator_revamped_create_user()
-{
+function tagregator_revamped_create_user() {
 	if ( ! username_exists( 'TagregatorRevamped' ) ) {
 		wp_insert_user(
 			array(
