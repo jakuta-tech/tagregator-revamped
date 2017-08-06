@@ -50,3 +50,4 @@ require_once( plugin_dir_path( __FILE__ ) . 'settings/custom-posts.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/options.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/admin-menus.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/settings-page.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'settings/shortcode.php' );

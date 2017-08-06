@@ -68,6 +68,13 @@ function tagregator_revamped_options()
 		'tagregator_revamped_instagram',
 		'tagregator_revamped_instagram'
 	);
+	add_settings_field(
+		'tagregator_revamped_instagram_sandbox',
+		'Sandbox',
+		'tagregator_revamped_instagram_sandbox',
+		'tagregator_revamped_instagram',
+		'tagregator_revamped_instagram'
+	);
 
 	// google+ settings
 	add_settings_section(
@@ -135,16 +142,26 @@ function tagregator_revamped_instagram_client_secret()
 	echo "<input id='tagregator_revamped_instagram_client_secret' name='tagregator_revamped_options[tagregator_revamped_instagram_client_secret]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_client_secret']}' />";
 } // end tagregator_revamped_instagram_client_secret
 
+function tagregator_revamped_instagram_redirect_url()
+{
+	$tr_options = get_option( 'tagregator_revamped_options' );
+	echo "<input id='tagregator_revamped_instagram_redirect_url' name='tagregator_revamped_options[tagregator_revamped_instagram_redirect_url]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_redirect_url']}' />";
+} // end tagregator_revamped_instagram_redirect_url
+
 function tagregator_revamped_instagram_access_token()
 {
 	$tr_options = get_option( 'tagregator_revamped_options' );
 	echo "<input id='tagregator_revamped_instagram_access_token' name='tagregator_revamped_options[tagregator_revamped_instagram_access_token]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_access_token']}' />";
 } // end tagregator_revamped_instagram_access_token
 
-function tagregator_revamped_instagram_redirect_url()
+function tagregator_revamped_instagram_sandbox()
 {
 	$tr_options = get_option( 'tagregator_revamped_options' );
-	echo "<input id='tagregator_revamped_instagram_redirect_url' name='tagregator_revamped_options[tagregator_revamped_instagram_redirect_url]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_redirect_url']}' />";
+	echo "<select id='tagregator_revamped_instagram_sandbox' name='tagregator_revamped_options[tagregator_revamped_instagram_sandbox]'>";
+	echo "<option value='yes'>Yes</option>";
+	echo "<option value='no'>No</option>";
+	echo "</select>";
+//	echo "<input id='tagregator_revamped_instagram_sandbox' name='tagregator_revamped_options[tagregator_revamped_instagram_sandbox]' size='40' type='text' value='{$tr_options['tagregator_revamped_instagram_sandbox']}' />";
 } // end tagregator_revamped_instagram_redirect_url
 
 function tagregator_revamped_flickr_key()
