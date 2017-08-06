@@ -15,7 +15,7 @@ function tagregator_revamped_shortcode( $the_hashtags ) {
 		$term = term_exists( $cleantag, 'tagrev-hashtags' );
 		if ( 0 == $term && null == $term ) {
 			wp_insert_term(
-				$cleantag,
+				'#' . $cleantag,
 				'tagrev-hashtags',
 				array(
 					'description' => '#' . $cleantag,

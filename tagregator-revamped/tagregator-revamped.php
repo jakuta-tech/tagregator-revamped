@@ -40,6 +40,36 @@ define( 'TAGREGATOR_REVAMPED_FLICKR_API', 'https://secure.flickr.com/services/re
 define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_DEV_PORTAL', 'https://console.developers.google.com/' );
 define( 'TAGREGATOR_REVAMPED_GOOGLEPLUS_API', 'https://www.googleapis.com/plus' );
 
+//////////////////////////////////////////////////////
+// Create cron job
+//////////////////////////////////////////////////////
+
+// Custom Cron Recurrences
+function tagregator_revamped_do_api_calls( $schedules ) {
+	$schedules['tagrev5'] = array(
+		'display' => 'every 5 minutes',
+		'interval' => 300,
+	);
+	return $schedules;
+}
+
+add_filter( 'cron_schedules', 'tagregator_revamped_do_api_calls' );
+
+/////////////////////////////// register cron every 5 minutes
+function tagregator_revamped_activation() {
+	if ( ! wp_next_scheduled( 'tagregator_revamped_do_api_calls' ) ) {
+		wp_schedule_event( time(), 'tagrev5', 'tagregator_revamped_do_api_calls' );
+	}
+}// end tagregator_revamped_activation
+
+register_activation_hook( __FILE__, 'tagregator_revamped_activation' );
+
+
+function tagregator_revamped_deactivation() {
+	wp_clear_scheduled_hook( 'tagregator_revamped_do_api_calls' );
+}// end tagregator_revamped_deactivation
+
+register_deactivation_hook( __FILE__, 'tagregator_revamped_deactivation' );
 
 //////////////////////////////////////////////////////
 // Load core files
@@ -51,3 +81,5 @@ require_once( plugin_dir_path( __FILE__ ) . 'settings/options.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/admin-menus.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/settings-page.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/shortcode.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'settings/cron.php' );
+
