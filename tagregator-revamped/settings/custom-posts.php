@@ -19,7 +19,16 @@ function tagregator_revamped_create_taxonomy() {
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,
 	);
-	register_taxonomy( 'tagrev-hashtags', array( 'tagrev-tweets' ), $args );
+	register_taxonomy(
+		'tagrev-hashtags',
+		array(
+			'tagrev-twiter',
+			'tagrev-instagram',
+			'tagrev-googleplus',
+			'tagrev-flickr',
+		),
+		$args
+	);
 
 }// end tagregator_revamped_create_taxonomy
 

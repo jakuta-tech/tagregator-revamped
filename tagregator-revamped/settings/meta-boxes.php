@@ -30,6 +30,7 @@ function tagregator_revamped_metaboxes() {
 		'tagrev_meta_username' => 'Username',
 		'tagrev_meta_profile_url' => 'Profile URL',
 		'tagrev_meta_img' => 'Image',
+		'tagrev_meta_url' => 'Url',
 	);
 	?>
 	<table id="tagrev-meta">

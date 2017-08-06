@@ -19,8 +19,36 @@ function tagregator_revamped_get_instagram_posts( $the_term ) {
 	}
 
 	$response = wp_remote_get( $url );
-	$body     = json_decode( wp_remote_retrieve_body( $response ) );
+	$the_result = wp_remote_retrieve_body( $response );
+	$body = json_decode( $the_result, true );
+	$tag_user = get_user_by( 'login', 'TagregatorRevamped' );
 
+	foreach ( $body['data'] as $insta_post ) {
 
+		// Create post object
+		$my_post = array(
+			'post_title' => $insta_post['id'],
+			'post_content' => $insta_post['caption']['text'],
+			'post_status' => 'publish',
+			'post_author' => $tag_user->ID,
+			'post_type' => 'tagrev-instagram',
+			'meta_input' => array(
+				'tagrev_meta_id' => $insta_post['id'],
+				'tagrev_meta_name' => $insta_post['user']['full_name'],
+				'tagrev_meta_username' => $insta_post['user']['username'],
+				'tagrev_meta_profile_url' => 'https://instagram.com/' . $insta_post['user']['username'],
+				'tagrev_meta_img' => $insta_post['images']['standard_resolution']['url'],
+				'tagrev_meta_url' => $insta_post['link'],
+			),
+		);
+
+		// Insert the post into the database
+		$my_post_id = wp_insert_post( $my_post );
+
+		// Add term to post
+		if ( $my_post_id ) {
+			wp_set_object_terms( $my_post_id, $the_term, 'tagrev-hashtags', true );
+		}
+	}// end foreach ( $body['data'] as $insta_post )
 
 }// end tagregator_revamped_get_instagram_posts
