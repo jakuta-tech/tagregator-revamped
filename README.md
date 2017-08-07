@@ -15,6 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Gathers posts with certain #hashtags from multiple social media sites.
 
+![tagrev_img](https://raw.githubusercontent.com/mrxkon/tagregator-revamped/master/tagregator_revamped.png)
+
 #### Installation
 
 **From within WordPress**
