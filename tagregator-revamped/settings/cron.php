@@ -11,6 +11,7 @@ function tagregator_revamped_get_api_hashtags() {
 	foreach ( $terms as $term ) {
 		$the_term = $term->name;
 		tagregator_revamped_get_instagram_posts( $the_term );
+		tagregator_revamped_get_googleplus_posts( $the_term );
 	}
 
 }// end tagregator_revamped_get_api_hashtags

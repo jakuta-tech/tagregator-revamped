@@ -38,6 +38,7 @@ function tagregator_revamped_get_instagram_posts( $the_term ) {
 					'tagrev_meta_name' => $insta_post['user']['full_name'],
 					'tagrev_meta_username' => $insta_post['user']['username'],
 					'tagrev_meta_profile_url' => 'https://instagram.com/' . $insta_post['user']['username'],
+					'tagrev_meta_profile_img' => $insta_post['user']['profile_picture'],
 					'tagrev_meta_img' => $insta_post['images']['standard_resolution']['url'],
 					'tagrev_meta_url' => $insta_post['link'],
 				),
