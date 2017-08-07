@@ -34,6 +34,8 @@ function tagregator_revamped_get_flickr_posts( $the_term ) {
 		$tag_user = get_user_by( 'login', 'TagregatorRevamped' );
 		error_log( $min_date );
 
+		// TODO: FIND POSTS WITH AVATAR, CHECK MIN DATE
+
 		foreach ( $body['photos']['photo'] as $flickr_post ) {
 
 			$post_date = date( 'Y-m-d H:i:s', $flickr_post['dateupload'] );
