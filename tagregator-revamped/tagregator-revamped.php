@@ -85,4 +85,5 @@ require_once( plugin_dir_path( __FILE__ ) . 'settings/shortcode.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'settings/cron.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'functions/instagram-posts.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'functions/googleplus-posts.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'functions/flickr-posts.php' );
 

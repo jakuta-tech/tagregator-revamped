@@ -1,6 +1,6 @@
 <?php
 //////////////////////////////////////////////////////
-// Insert Instagram Posts
+// Insert Google+ Posts
 //////////////////////////////////////////////////////
 
 function tagregator_revamped_get_googleplus_posts( $the_term ) {
@@ -10,7 +10,7 @@ function tagregator_revamped_get_googleplus_posts( $the_term ) {
 			return;
 		}
 
-		$url = TAGREGATOR_REVAMPED_GOOGLEPLUS_API . 'v1/activities?query=' . $the_term . '&key=' . $tr_options['tagregator_revamped_googleplus_key'];
+		$url = TAGREGATOR_REVAMPED_GOOGLEPLUS_API . 'v1/activities?query=#' . $the_term . '&key=' . $tr_options['tagregator_revamped_googleplus_key'];
 
 		$response = wp_remote_get( $url );
 		$the_result = wp_remote_retrieve_body( $response );
@@ -62,6 +62,6 @@ function tagregator_revamped_get_googleplus_posts( $the_term ) {
 					wp_set_object_terms( $my_post_id, $the_term, 'tagrev-hashtags', true );
 				}
 			}
-		}// end foreach ( $body['data'] as $insta_post )
+		}// end foreach ( $body['items'] as $gplus_post )
 	}
-}// end tagregator_revamped_get_instagram_posts
+}// end tagregator_revamped_get_googleplus_posts
