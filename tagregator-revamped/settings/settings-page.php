@@ -111,6 +111,7 @@ function tagregator_revamped_settings_page()
 
 	$tr_insta_options = get_option( 'tagregator_revamped_options', array() );
 	$access_token = '';
+	$insta_client_id = '';
 
 	if ( ! empty( $tr_insta_options ) ) {
 		$insta_client_id = $tr_insta_options['tagregator_revamped_instagram_client_id'];
