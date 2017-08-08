@@ -25,7 +25,7 @@ function tagregator_revamped_options() {
 		'tagregator_revamped_twitter'
 	);
 	add_settings_field(
-		'tagregator_revamped_consumer_secret',
+		'tagregator_revamped_twitter_secret',
 		'Consumer Secret',
 		'tagregator_revamped_twitter_secret',
 		'tagregator_revamped_twitter',

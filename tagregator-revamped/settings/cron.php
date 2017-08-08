@@ -11,6 +11,7 @@ function tagregator_revamped_get_api_hashtags() {
 	if ( ! empty( $terms ) ) {
 		foreach ( $terms as $term ) {
 			$the_term = $term->name;
+			tagregator_revamped_get_twitter_posts( $the_term );
 			tagregator_revamped_get_instagram_posts( $the_term );
 			tagregator_revamped_get_googleplus_posts( $the_term );
 			tagregator_revamped_get_flickr_posts( $the_term );
